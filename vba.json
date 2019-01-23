@@ -64,6 +64,20 @@
 				"    FunctionName = 4.5",
 				"End Function"
 			],
-			"description": "A commented skeleton for a VBA Class module"
-			}
+			"description": "A commented skeleton for a VBA Function"
+			},
+			"VBA - Description": {
+				"prefix": "VBA-Description",
+				"body": [
+					"'***************************************************************************",
+					"'Purpose: Returns this given this and that",
+					"'",
+					"'Inputs:    arg1 = Description",
+					"'           arg2 = Description",
+					"'",
+					"'Outputs:   A double",
+					"'***************************************************************************"
+				],
+				"description": "The docstring of a function"
+				}
 }
