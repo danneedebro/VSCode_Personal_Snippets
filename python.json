@@ -1,0 +1,37 @@
+{
+	"Date - format string": {
+		"prefix": "datesnippet-formatstring",
+		"body": [
+			"'%Y-%m-%d %H:%M:%S.%f%z'$0"
+		],
+		"description": "print out a datetime format string"
+    },
+    "Date - datestring": {
+		"prefix": "datesnippet-datetime-ex",
+		"body": [
+			"'2019-01-28 13:02:34.003+0100'$0"
+		],
+		"description": "print out a datetime"
+    },
+    "Date - pytz timezone": {
+		"prefix": "datesnippet-pytz-timezone-Stochholm",
+		"body": [
+			"pytz.timezone('Europe/Stockholm')$0"
+		],
+		"description": "print out a datetime"
+    },
+    "Date - timezone aware now": {
+		"prefix": "datesnippet-now-aware",
+		"body": [
+			"pytz.timezone('Europe/Stockholm').localize(datetime.now())$0"
+		],
+		"description": "print out a datetime"
+    },
+    "Date - time in utc expressed in another timezone": {
+		"prefix": "datesnippet-utzTime-as-timezone",
+		"body": [
+			"pytz.utc.localize(datetime(2019, 1, 14, 3, 30)).astimezone(pytz.timezone('Europe/Stockholm'))$0"
+		],
+		"description": "print out a datetime"
+    }
+}

@@ -1,0 +1,9 @@
+{
+	"Markdown - link": {
+		"prefix": "markdown-link",
+		"body": [
+			"[${1:Description}](${2:https://www.myurl.com})$0"
+		],
+		"description": "Log output to console"
+	}
+}
