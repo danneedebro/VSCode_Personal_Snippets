@@ -3,35 +3,194 @@
 		"prefix": "datesnippet-formatstring",
 		"body": [
 			"'%Y-%m-%d %H:%M:%S.%f%z'$0"
-		],
+			],
 		"description": "print out a datetime format string"
-    },
-    "Date - datestring": {
+  },
+	"Date - datestring": {
 		"prefix": "datesnippet-datetime-ex",
 		"body": [
 			"'2019-01-28 13:02:34.003+0100'$0"
 		],
 		"description": "print out a datetime"
-    },
-    "Date - pytz timezone": {
+	},
+	"Date - pytz timezone": {
 		"prefix": "datesnippet-pytz-timezone-Stochholm",
 		"body": [
-			"pytz.timezone('Europe/Stockholm')$0"
+		"pytz.timezone('Europe/Stockholm')$0"
 		],
 		"description": "print out a datetime"
-    },
-    "Date - timezone aware now": {
-		"prefix": "datesnippet-now-aware",
+	},
+	"Date - timezone aware now": {
+	"prefix": "datesnippet-now-aware",
+	"body": [
+		"pytz.timezone('Europe/Stockholm').localize(datetime.now())$0"
+	],
+	"description": "print out a datetime"
+	},
+	"Date - time in utc expressed in another timezone": {
+	"prefix": "datesnippet-utzTime-as-timezone",
+	"body": [
+		"pytz.utc.localize(datetime(2019, 1, 14, 3, 30)).astimezone(pytz.timezone('Europe/Stockholm'))$0"
+	],
+	"description": "print out a datetime"
+	},
+	"For-loop - loop dictionary key and value": {
+		"prefix": "forloop-dict-key-and-value",
 		"body": [
-			"pytz.timezone('Europe/Stockholm').localize(datetime.now())$0"
+			"for key, value in myDict.items():",
+			"    pass"
 		],
-		"description": "print out a datetime"
-    },
-    "Date - time in utc expressed in another timezone": {
-		"prefix": "datesnippet-utzTime-as-timezone",
+		"description": ""
+		},
+	"For-loop - loop dictionary with index": {
+		"prefix": "forloop-dict-key-and-index",
 		"body": [
-			"pytz.utc.localize(datetime(2019, 1, 14, 3, 30)).astimezone(pytz.timezone('Europe/Stockholm'))$0"
+			"for index, key in enumerate(myDict):",
+			"    pass"
 		],
-		"description": "print out a datetime"
-    }
+		"description": ""
+		},
+	"For-loop - loop dictionary in sorted order": {
+		"prefix": "forloop-dict-key-and-value-sorted",
+		"body": [
+			"for key, value in sorted(myDict.items(), reverse=True):",
+			"    pass"
+		],
+		"description": ""
+	},
+	"wx.Python - Custom panel": {
+		"prefix": "wxPythonsnippet-Custom-panel-with-border",
+		"body": [
+			"class CustomPanel(wx.Panel):",
+			"   def __init__(self, Parent):",
+			"      wx.Panel.__init__(self, Parent, -1)",
+			"      self.Bind(wx.EVT_PAINT, self.OnPaint)",
+			"      self.Bind(wx.EVT_SIZE,self.OnSize)",
+			"",
+			"   def OnSize(self, event):",
+			"      self.Refresh()",
+			"      event.Skip()",
+			"",
+			"   def OnPaint(self, event):",
+			"      dc = wx.PaintDC(self)",
+			"      dc.SetPen(wx.Pen(\"Gray\", width=1))",
+			"      dc.SetBrush(wx.Brush(\"black\", wx.TRANSPARENT))",
+			"      mySize = self.GetSize()",
+			"      dc.DrawRectangle(0,0, mySize.GetWidth(), mySize.GetHeight())",
+			""
+		],
+		"description": "Creates a cusom panel with a border around it"
+	},
+	"Error handling - Exceptions": {
+		"prefix": "errorsnippet-Exceptions-list",
+		"body": [
+			"\"\"\"",
+			"Exception\tCause of Error",
+			"AssertionError\tRaised when assert statement fails.",
+			"AttributeError\tRaised when attribute assignment or reference fails.",
+			"EOFError\tRaised when the input() functions hits end-of-file condition.",
+			"FloatingPointError\tRaised when a floating point operation fails.",
+			"GeneratorExit\tRaise when a generator's close() method is called.",
+			"ImportError\tRaised when the imported module is not found.",
+			"IndexError\tRaised when index of a sequence is out of range.",
+			"KeyError\tRaised when a key is not found in a dictionary.",
+			"KeyboardInterrupt\tRaised when the user hits interrupt key (Ctrl+c or delete).",
+			"MemoryError\tRaised when an operation runs out of memory.",
+			"NameError\tRaised when a variable is not found in local or global scope.",
+			"NotImplementedError\tRaised by abstract methods.",
+			"OSError\tRaised when system operation causes system related error.",
+			"OverflowError\tRaised when result of an arithmetic operation is too large to be represented.",
+			"ReferenceError\tRaised when a weak reference proxy is used to access a garbage collected referent.",
+			"RuntimeError\tRaised when an error does not fall under any other category.",
+			"StopIteration\tRaised by next() function to indicate that there is no further item to be returned by iterator.",
+			"SyntaxError\tRaised by parser when syntax error is encountered.",
+			"IndentationError\tRaised when there is incorrect indentation.",
+			"TabError\tRaised when indentation consists of inconsistent tabs and spaces.",
+			"SystemError\tRaised when interpreter detects internal error.",
+			"SystemExit\tRaised by sys.exit() function.",
+			"TypeError\tRaised when a function or operation is applied to an object of incorrect type.",
+			"UnboundLocalError\tRaised when a reference is made to a local variable in a function or method, but no value has been bound to that variable.",
+			"UnicodeError\tRaised when a Unicode-related encoding or decoding error occurs.",
+			"UnicodeEncodeError\tRaised when a Unicode-related error occurs during encoding.",
+			"UnicodeDecodeError\tRaised when a Unicode-related error occurs during decoding.",
+			"UnicodeTranslateError\tRaised when a Unicode-related error occurs during translating.",
+			"ValueError\tRaised when a function gets argument of correct type but improper value.",
+			"ZeroDivisionError\tRaised when second operand of division or modulo operation is zero.",
+			"\"\"\""
+		],
+		"description": ""
+	},
+	"Error handling - exceptions hierarchy": {
+		"prefix": "errorsnippet-exceptions-hierarchy",
+		"body": [
+			"\"\"\"",
+			"BaseException",
+			" +-- SystemExit",
+			" +-- KeyboardInterrupt",
+			" +-- GeneratorExit",
+			" +-- Exception",
+			"      +-- StopIteration",
+			"      +-- StopAsyncIteration",
+			"      +-- ArithmeticError",
+			"      |    +-- FloatingPointError",
+			"      |    +-- OverflowError",
+			"      |    +-- ZeroDivisionError",
+			"      +-- AssertionError",
+			"      +-- AttributeError",
+			"      +-- BufferError",
+			"      +-- EOFError",
+			"      +-- ImportError",
+			"      |    +-- ModuleNotFoundError",
+			"      +-- LookupError",
+			"      |    +-- IndexError",
+			"      |    +-- KeyError",
+			"      +-- MemoryError",
+			"      +-- NameError",
+			"      |    +-- UnboundLocalError",
+			"      +-- OSError",
+			"      |    +-- BlockingIOError",
+			"      |    +-- ChildProcessError",
+			"      |    +-- ConnectionError",
+			"      |    |    +-- BrokenPipeError",
+			"      |    |    +-- ConnectionAbortedError",
+			"      |    |    +-- ConnectionRefusedError",
+			"      |    |    +-- ConnectionResetError",
+			"      |    +-- FileExistsError",
+			"      |    +-- FileNotFoundError",
+			"      |    +-- InterruptedError",
+			"      |    +-- IsADirectoryError",
+			"      |    +-- NotADirectoryError",
+			"      |    +-- PermissionError",
+			"      |    +-- ProcessLookupError",
+			"      |    +-- TimeoutError",
+			"      +-- ReferenceError",
+			"      +-- RuntimeError",
+			"      |    +-- NotImplementedError",
+			"      |    +-- RecursionError",
+			"      +-- SyntaxError",
+			"      |    +-- IndentationError",
+			"      |         +-- TabError",
+			"      +-- SystemError",
+			"      +-- TypeError",
+			"      +-- ValueError",
+			"      |    +-- UnicodeError",
+			"      |         +-- UnicodeDecodeError",
+			"      |         +-- UnicodeEncodeError",
+			"      |         +-- UnicodeTranslateError",
+			"      +-- Warning",
+			"           +-- DeprecationWarning",
+			"           +-- PendingDeprecationWarning",
+			"           +-- RuntimeWarning",
+			"           +-- SyntaxWarning",
+			"           +-- UserWarning",
+			"           +-- FutureWarning",
+			"           +-- ImportWarning",
+			"           +-- UnicodeWarning",
+			"           +-- BytesWarning",
+			"           +-- ResourceWarning",
+			"\"\"\""
+		],
+		"description": "Exception hierarchy"
+	},
+	
 }
