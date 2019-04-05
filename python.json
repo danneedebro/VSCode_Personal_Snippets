@@ -58,6 +58,27 @@
 		],
 		"description": ""
 	},
+	"wx.Python - Custom frame": {
+    "prefix": "wxPythonsnippet-frame",
+    "body": [
+      "import wx\r",
+      "import wx.lib.stattext as ST\r",
+      "\r",
+      "\r",
+      "class CustomFrame(wx.Frame):\r",
+      "    def __init__(self, parent, title):\r",
+      "        super().__init__(parent, title=title, size=(900, 750))\r",
+      "\r",
+      "\r",
+      "if __name__ == \"__main__\":\r",
+      "    app = wx.App()\r",
+      "    frame = CustomFrame(None, title='Magic Mirror')\r",
+      "    frame.Show(True)\r",
+      "    app.MainLoop()\r",
+      ""
+    ],
+    "description": ""
+  },
 	"wx.Python - Custom panel": {
 		"prefix": "wxPythonsnippet-Custom-panel-with-border",
 		"body": [
@@ -192,5 +213,108 @@
 		],
 		"description": "Exception hierarchy"
 	},
-	
+	"Error handling - logging, main module": {
+		"prefix": "errorsnippet-logging-mainmodule",
+		"body": [
+			"import logging",
+			"",
+			"LOG_FORMAT = '%(levelname)s: in %(module)s (%(funcName)s), %(asctime)s - %(message)s'",
+			"logging.basicConfig(filename = \"${1:ErrorLog.txt}\", level=logging.CRITICAL, format=LOG_FORMAT, filemode = 'w')",
+			"logger = logging.getLogger(\"MyApplication\")",
+			"logger.setLevel(${2|logging.DEBUG,logging.INFO,logging.WARNING,logging.ERROR,logging.CRITICAL|})"
+		],
+		"description": "Description"
+	},
+	"Error handling - logging, submodule": {
+		"prefix": "errorsnippet-logging-submodule",
+		"body": [
+			"import logging",
+			"",
+			"logger = logging.getLogger(\"MyApplication\")"                
+		],
+		"description": "Description"
+	},
+	"Python - Class with properties": {
+    "prefix": "pythonsnippet-class-w-properties",
+    "body": [
+      "class ${1:ClassName}:\r",
+      "    def __init__(self, temperature = 0):\r",
+      "        self._temperature = temperature\r",
+      "\r",
+      "    def to_fahrenheit(self):\r",
+      "        return (self.temperature * 1.8) + 32\r",
+      "\r",
+      "    @property\r",
+      "    def temperature(self):\r",
+      "        print(\"Getting value\")\r",
+      "        return self._temperature\r",
+      "\r",
+      "    @temperature.setter\r",
+      "    def temperature(self, value):\r",
+      "        if value < -273:\r",
+      "            raise ValueError(\"Temperature below -273 is not possible\")\r",
+      "        print(\"Setting value\")\r",
+      "        self._temperature = value"
+    ],
+    "description": ""
+	},
+	"Python - Class with properties and docstring": {
+    "prefix": "pythonsnippet-class-w-properties-and-docstrings",
+    "body": [
+      "class Celsius:\r",
+      "    '''\r",
+      "    Class to store a temperature in celsius\r",
+      "\r",
+      "    Args:\r",
+      "        temperature (float): The temperature in celsius > -273\r",
+      "        *args: The variable arguments are used for...\r",
+      "        **kwargs: The keyword arguments are used for...\r",
+      "\r",
+      "    Key Attributes/Properties:\r",
+      "        temperature (float): Temperature in celsius\r",
+      "    '''\r",
+      "    def __init__(self, temperature = 0, *args, **kwargs):\r",
+      "        self._temperature = temperature\r",
+      "\r",
+      "    def ToFahrenheit(self):\r",
+      "        '''Converts current temperature in celsius to fahrenheit\r",
+      "\r",
+      "        Args:\r",
+      "            None\r",
+      "\r",
+      "        Returns:\r",
+      "            (float): The temperature in fahrenheit\r",
+      "        '''\r",
+      "        return (self.temperature * 1.8) + 32\r",
+      "\r",
+      "    @property\r",
+      "    def temperature(self):\r",
+      "        \"\"\"Gets and sets the temperature\"\"\"\r",
+      "        print(\"Getting value\")\r",
+      "        return self._temperature\r",
+      "\r",
+      "    @temperature.setter\r",
+      "    def temperature(self, value):\r",
+      "        if value < -273:\r",
+      "            raise ValueError(\"Temperature below -273 is not possible\")\r",
+      "        print(\"Setting value\")\r",
+      "        self._temperature = value\r",
+      ""
+    ],
+    "description": ""
+  },
+
+	"Python - Class property": {
+    "prefix": "pythonsnippet-class-property",
+    "body": [
+      "@property\r",
+      "def ${1:propertyName}(self):\r",
+      "    return self._${1:propertyName}\r",
+      "\r",
+      "@${1:propertyName}.setter\r",
+      "def ${1:propertyName}(self, value):\r",
+      "    self._${1:propertyName} = value"
+    ],
+    "description": ""
+  }
 }
