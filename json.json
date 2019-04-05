@@ -1,0 +1,17 @@
+{
+	"Title key": {
+		"prefix": "snippet-template",
+		"body": [
+			"\t\"${1:Title key}\": {",
+			"\t\t\"prefix\": \"${2:snippet-function}\",",
+			"\t\t\"body\": [",
+			"\t\t\t\"${5:<Code here>}$0\",",
+			"\t\t\t\"<Code here>\"",
+			"\t\t],",
+			"\t\t\"description\": \"${3:Description}\"",
+			"\t}${4:,}",
+			"\t"
+		],
+		"description": "VSCode json code snippet template"
+	}
+}

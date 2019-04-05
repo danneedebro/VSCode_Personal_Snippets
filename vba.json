@@ -301,5 +301,30 @@
 
 		],
 		"description": "A commented skeleton for a VBA Class module"
+	},
+	"VBA - Class properties for a set": {
+		"prefix": "VBA-Class-Set-of-subclass - only Properties",
+		"body": [
+			"Private p${1:Timestep}s As Collection",
+			"${0:'}",
+			"${0:'}",
+			"${0:' PROPERTIES}",
+			"Public Property Get ${1:Timestep}s() As Collection",
+			"    Set ${1:Timestep}s = p${1:Timestep}s",
+			"End Property",
+			"",
+			"Public Property Set ${1:Property1}s(arg As Collection)",
+			"    Set p${1:Timestep}s = arg",
+			"End Property",
+			"",
+			"Public Property Get ${1:Timestep}(ByVal index as Integer) As ${2:TimestepClass}",
+			"    Set ${1:Timestep} = p${1:Timestep}s(index)",
+			"End Property",
+			"",
+			"Public Property Set ${1:Property1}(ByVal index as Integer, arg As ${2:TimestepClass})",
+			"    Set p${1:Timestep}s(index) = arg",
+			"End Property",
+		],
+		"description": "A commented skeleton for a VBA Class module"
 },
 }
