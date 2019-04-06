@@ -263,7 +263,7 @@
     "body": [
       "class ${1:ClassName}:\r",
       "    '''\r",
-      "    Class to store a temperature in celsius\r",
+      "    ${2:Class to store a temperature in celsius}\r",
       "\r",
       "    Args:\r",
       "        temperature (float): The temperature in celsius > -273\r",
