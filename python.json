@@ -261,7 +261,7 @@
 	"Python - Class with properties and docstring": {
     "prefix": "pythonsnippet-class-w-properties-and-docstrings",
     "body": [
-      "class Celsius:\r",
+      "class ${1:ClassName}:\r",
       "    '''\r",
       "    Class to store a temperature in celsius\r",
       "\r",
